@@ -1,0 +1,2070 @@
+# 1 "../src/test_array.c"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 31 "<command-line>"
+# 1 "/usr/include/stdc-predef.h" 1 3 4
+# 32 "<command-line>" 2
+# 1 "../src/test_array.c"
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/7/include/stdarg.h" 1 3 4
+# 40 "/usr/lib/gcc/x86_64-linux-gnu/7/include/stdarg.h" 3 4
+
+# 40 "/usr/lib/gcc/x86_64-linux-gnu/7/include/stdarg.h" 3 4
+typedef __builtin_va_list __gnuc_va_list;
+# 99 "/usr/lib/gcc/x86_64-linux-gnu/7/include/stdarg.h" 3 4
+typedef __gnuc_va_list va_list;
+# 2 "../src/test_array.c" 2
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/7/include/stddef.h" 1 3 4
+# 149 "/usr/lib/gcc/x86_64-linux-gnu/7/include/stddef.h" 3 4
+typedef long int ptrdiff_t;
+# 216 "/usr/lib/gcc/x86_64-linux-gnu/7/include/stddef.h" 3 4
+typedef long unsigned int size_t;
+# 328 "/usr/lib/gcc/x86_64-linux-gnu/7/include/stddef.h" 3 4
+typedef int wchar_t;
+# 426 "/usr/lib/gcc/x86_64-linux-gnu/7/include/stddef.h" 3 4
+typedef struct {
+  long long __max_align_ll __attribute__((__aligned__(__alignof__(long long))));
+  long double __max_align_ld __attribute__((__aligned__(__alignof__(long double))));
+# 437 "/usr/lib/gcc/x86_64-linux-gnu/7/include/stddef.h" 3 4
+} max_align_t;
+# 3 "../src/test_array.c" 2
+# 1 "/usr/include/setjmp.h" 1 3 4
+# 25 "/usr/include/setjmp.h" 3 4
+# 1 "/usr/include/features.h" 1 3 4
+# 424 "/usr/include/features.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/sys/cdefs.h" 1 3 4
+# 427 "/usr/include/x86_64-linux-gnu/sys/cdefs.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/wordsize.h" 1 3 4
+# 428 "/usr/include/x86_64-linux-gnu/sys/cdefs.h" 2 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/long-double.h" 1 3 4
+# 429 "/usr/include/x86_64-linux-gnu/sys/cdefs.h" 2 3 4
+# 425 "/usr/include/features.h" 2 3 4
+# 448 "/usr/include/features.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/gnu/stubs.h" 1 3 4
+# 10 "/usr/include/x86_64-linux-gnu/gnu/stubs.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/gnu/stubs-64.h" 1 3 4
+# 11 "/usr/include/x86_64-linux-gnu/gnu/stubs.h" 2 3 4
+# 449 "/usr/include/features.h" 2 3 4
+# 26 "/usr/include/setjmp.h" 2 3 4
+
+
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/setjmp.h" 1 3 4
+# 26 "/usr/include/x86_64-linux-gnu/bits/setjmp.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/wordsize.h" 1 3 4
+# 27 "/usr/include/x86_64-linux-gnu/bits/setjmp.h" 2 3 4
+
+
+
+
+typedef long int __jmp_buf[8];
+# 30 "/usr/include/setjmp.h" 2 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h" 1 3 4
+
+
+
+
+typedef struct
+{
+  unsigned long int __val[(1024 / (8 * sizeof (unsigned long int)))];
+} __sigset_t;
+# 31 "/usr/include/setjmp.h" 2 3 4
+
+
+struct __jmp_buf_tag
+  {
+
+
+
+
+    __jmp_buf __jmpbuf;
+    int __mask_was_saved;
+    __sigset_t __saved_mask;
+  };
+
+
+typedef struct __jmp_buf_tag jmp_buf[1];
+
+
+
+extern int setjmp (jmp_buf __env) __attribute__ ((__nothrow__));
+
+
+
+
+extern int __sigsetjmp (struct __jmp_buf_tag __env[1], int __savemask) __attribute__ ((__nothrow__));
+
+
+
+extern int _setjmp (struct __jmp_buf_tag __env[1]) __attribute__ ((__nothrow__));
+# 67 "/usr/include/setjmp.h" 3 4
+extern void longjmp (struct __jmp_buf_tag __env[1], int __val)
+     __attribute__ ((__nothrow__)) __attribute__ ((__noreturn__));
+
+
+
+
+
+extern void _longjmp (struct __jmp_buf_tag __env[1], int __val)
+     __attribute__ ((__nothrow__)) __attribute__ ((__noreturn__));
+
+
+
+
+
+
+
+typedef struct __jmp_buf_tag sigjmp_buf[1];
+# 93 "/usr/include/setjmp.h" 3 4
+extern void siglongjmp (sigjmp_buf __env, int __val)
+     __attribute__ ((__nothrow__)) __attribute__ ((__noreturn__));
+# 103 "/usr/include/setjmp.h" 3 4
+
+# 4 "../src/test_array.c" 2
+# 1 "/usr/include/cmocka.h" 1 3 4
+# 124 "/usr/include/cmocka.h" 3 4
+      typedef unsigned long int uintptr_t;
+# 1607 "/usr/include/cmocka.h" 3 4
+static inline void _unit_test_dummy(void **state) {
+    (void)state;
+}
+# 2000 "/usr/include/cmocka.h" 3 4
+void mock_assert(const int result, const char* const expression,
+                 const char * const file, const int line);
+# 2048 "/usr/include/cmocka.h" 3 4
+typedef void (*UnitTestFunction)(void **state);
+
+
+typedef int (*CheckParameterValue)(const unsigned long int value,
+                                   const unsigned long int check_value_data);
+
+
+typedef enum UnitTestFunctionType {
+    UNIT_TEST_FUNCTION_TYPE_TEST = 0,
+    UNIT_TEST_FUNCTION_TYPE_SETUP,
+    UNIT_TEST_FUNCTION_TYPE_TEARDOWN,
+    UNIT_TEST_FUNCTION_TYPE_GROUP_SETUP,
+    UNIT_TEST_FUNCTION_TYPE_GROUP_TEARDOWN,
+} UnitTestFunctionType;
+
+
+
+
+
+
+typedef struct UnitTest {
+    const char* name;
+    UnitTestFunction function;
+    UnitTestFunctionType function_type;
+} UnitTest;
+
+typedef struct GroupTest {
+    UnitTestFunction setup;
+    UnitTestFunction teardown;
+    const UnitTest *tests;
+    const size_t number_of_tests;
+} GroupTest;
+
+
+typedef void (*CMUnitTestFunction)(void **state);
+
+
+typedef int (*CMFixtureFunction)(void **state);
+
+struct CMUnitTest {
+    const char *name;
+    CMUnitTestFunction test_func;
+    CMFixtureFunction setup_func;
+    CMFixtureFunction teardown_func;
+    void *initial_state;
+};
+
+
+typedef struct SourceLocation {
+    const char* file;
+    int line;
+} SourceLocation;
+
+
+typedef struct CheckParameterEvent {
+    SourceLocation location;
+    const char *parameter_name;
+    CheckParameterValue check_value;
+    unsigned long int check_value_data;
+} CheckParameterEvent;
+
+
+extern int global_expecting_assert;
+extern jmp_buf global_expect_assert_env;
+extern const char * global_last_failed_assert;
+
+
+unsigned long int _mock(const char * const function, const char* const file,
+                          const int line);
+
+void _expect_function_call(
+    const char * const function_name,
+    const char * const file,
+    const int line,
+    const int count);
+
+void _function_called(const char * const function, const char* const file,
+                          const int line);
+
+void _expect_check(
+    const char* const function, const char* const parameter,
+    const char* const file, const int line,
+    const CheckParameterValue check_function,
+    const unsigned long int check_data, CheckParameterEvent * const event,
+    const int count);
+
+void _expect_in_set(
+    const char* const function, const char* const parameter,
+    const char* const file, const int line, const unsigned long int values[],
+    const size_t number_of_values, const int count);
+void _expect_not_in_set(
+    const char* const function, const char* const parameter,
+    const char* const file, const int line, const unsigned long int values[],
+    const size_t number_of_values, const int count);
+
+void _expect_in_range(
+    const char* const function, const char* const parameter,
+    const char* const file, const int line,
+    const unsigned long int minimum,
+    const unsigned long int maximum, const int count);
+void _expect_not_in_range(
+    const char* const function, const char* const parameter,
+    const char* const file, const int line,
+    const unsigned long int minimum,
+    const unsigned long int maximum, const int count);
+
+void _expect_value(
+    const char* const function, const char* const parameter,
+    const char* const file, const int line, const unsigned long int value,
+    const int count);
+void _expect_not_value(
+    const char* const function, const char* const parameter,
+    const char* const file, const int line, const unsigned long int value,
+    const int count);
+
+void _expect_string(
+    const char* const function, const char* const parameter,
+    const char* const file, const int line, const char* string,
+    const int count);
+void _expect_not_string(
+    const char* const function, const char* const parameter,
+    const char* const file, const int line, const char* string,
+    const int count);
+
+void _expect_memory(
+    const char* const function, const char* const parameter,
+    const char* const file, const int line, const void* const memory,
+    const size_t size, const int count);
+void _expect_not_memory(
+    const char* const function, const char* const parameter,
+    const char* const file, const int line, const void* const memory,
+    const size_t size, const int count);
+
+void _expect_any(
+    const char* const function, const char* const parameter,
+    const char* const file, const int line, const int count);
+
+void _check_expected(
+    const char * const function_name, const char * const parameter_name,
+    const char* file, const int line, const unsigned long int value);
+
+void _will_return(const char * const function_name, const char * const file,
+                  const int line, const unsigned long int value,
+                  const int count);
+void _assert_true(const unsigned long int result,
+                  const char* const expression,
+                  const char * const file, const int line);
+void _assert_return_code(const unsigned long int result,
+                         size_t rlen,
+                         const unsigned long int error,
+                         const char * const expression,
+                         const char * const file,
+                         const int line);
+void _assert_int_equal(
+    const unsigned long int a, const unsigned long int b,
+    const char * const file, const int line);
+void _assert_int_not_equal(
+    const unsigned long int a, const unsigned long int b,
+    const char * const file, const int line);
+void _assert_string_equal(const char * const a, const char * const b,
+                          const char * const file, const int line);
+void _assert_string_not_equal(const char * const a, const char * const b,
+                              const char *file, const int line);
+void _assert_memory_equal(const void * const a, const void * const b,
+                          const size_t size, const char* const file,
+                          const int line);
+void _assert_memory_not_equal(const void * const a, const void * const b,
+                              const size_t size, const char* const file,
+                              const int line);
+void _assert_in_range(
+    const unsigned long int value, const unsigned long int minimum,
+    const unsigned long int maximum, const char* const file, const int line);
+void _assert_not_in_range(
+    const unsigned long int value, const unsigned long int minimum,
+    const unsigned long int maximum, const char* const file, const int line);
+void _assert_in_set(
+    const unsigned long int value, const unsigned long int values[],
+    const size_t number_of_values, const char* const file, const int line);
+void _assert_not_in_set(
+    const unsigned long int value, const unsigned long int values[],
+    const size_t number_of_values, const char* const file, const int line);
+
+void* _test_malloc(const size_t size, const char* file, const int line);
+void* _test_realloc(void *ptr, const size_t size, const char* file, const int line);
+void* _test_calloc(const size_t number_of_elements, const size_t size,
+                   const char* file, const int line);
+void _test_free(void* const ptr, const char* file, const int line);
+
+void _fail(const char * const file, const int line);
+
+void _skip(const char * const file, const int line);
+
+int _run_test(
+    const char * const function_name, const UnitTestFunction Function,
+    void ** const volatile state, const UnitTestFunctionType function_type,
+    const void* const heap_check_point);
+__attribute__ ((deprecated)) int _run_tests(const UnitTest * const tests,
+                                 const size_t number_of_tests);
+__attribute__ ((deprecated)) int _run_group_tests(const UnitTest * const tests,
+                                       const size_t number_of_tests);
+
+
+int _cmocka_run_group_tests(const char *group_name,
+                            const struct CMUnitTest * const tests,
+                            const size_t num_tests,
+                            CMFixtureFunction group_setup,
+                            CMFixtureFunction group_teardown);
+
+
+void print_message(const char* const format, ...) __attribute__ ((__format__ (__printf__, 1, 2)));
+void print_error(const char* const format, ...) __attribute__ ((__format__ (__printf__, 1, 2)));
+void vprint_message(const char* const format, va_list args) __attribute__ ((__format__ (__printf__, 1, 0)));
+void vprint_error(const char* const format, va_list args) __attribute__ ((__format__ (__printf__, 1, 0)));
+
+enum cm_message_output {
+    CM_OUTPUT_STDOUT,
+    CM_OUTPUT_SUBUNIT,
+    CM_OUTPUT_TAP,
+    CM_OUTPUT_XML,
+};
+# 2280 "/usr/include/cmocka.h" 3 4
+void cmocka_set_message_output(enum cm_message_output output);
+# 5 "../src/test_array.c" 2
+# 1 "/usr/include/stdio.h" 1 3 4
+# 27 "/usr/include/stdio.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/libc-header-start.h" 1 3 4
+# 28 "/usr/include/stdio.h" 2 3 4
+
+
+
+
+
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/7/include/stddef.h" 1 3 4
+# 34 "/usr/include/stdio.h" 2 3 4
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/types.h" 1 3 4
+# 27 "/usr/include/x86_64-linux-gnu/bits/types.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/wordsize.h" 1 3 4
+# 28 "/usr/include/x86_64-linux-gnu/bits/types.h" 2 3 4
+
+
+typedef unsigned char __u_char;
+typedef unsigned short int __u_short;
+typedef unsigned int __u_int;
+typedef unsigned long int __u_long;
+
+
+typedef signed char __int8_t;
+typedef unsigned char __uint8_t;
+typedef signed short int __int16_t;
+typedef unsigned short int __uint16_t;
+typedef signed int __int32_t;
+typedef unsigned int __uint32_t;
+
+typedef signed long int __int64_t;
+typedef unsigned long int __uint64_t;
+
+
+
+
+
+
+
+typedef long int __quad_t;
+typedef unsigned long int __u_quad_t;
+
+
+
+
+
+
+
+typedef long int __intmax_t;
+typedef unsigned long int __uintmax_t;
+# 130 "/usr/include/x86_64-linux-gnu/bits/types.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/typesizes.h" 1 3 4
+# 131 "/usr/include/x86_64-linux-gnu/bits/types.h" 2 3 4
+
+
+typedef unsigned long int __dev_t;
+typedef unsigned int __uid_t;
+typedef unsigned int __gid_t;
+typedef unsigned long int __ino_t;
+typedef unsigned long int __ino64_t;
+typedef unsigned int __mode_t;
+typedef unsigned long int __nlink_t;
+typedef long int __off_t;
+typedef long int __off64_t;
+typedef int __pid_t;
+typedef struct { int __val[2]; } __fsid_t;
+typedef long int __clock_t;
+typedef unsigned long int __rlim_t;
+typedef unsigned long int __rlim64_t;
+typedef unsigned int __id_t;
+typedef long int __time_t;
+typedef unsigned int __useconds_t;
+typedef long int __suseconds_t;
+
+typedef int __daddr_t;
+typedef int __key_t;
+
+
+typedef int __clockid_t;
+
+
+typedef void * __timer_t;
+
+
+typedef long int __blksize_t;
+
+
+
+
+typedef long int __blkcnt_t;
+typedef long int __blkcnt64_t;
+
+
+typedef unsigned long int __fsblkcnt_t;
+typedef unsigned long int __fsblkcnt64_t;
+
+
+typedef unsigned long int __fsfilcnt_t;
+typedef unsigned long int __fsfilcnt64_t;
+
+
+typedef long int __fsword_t;
+
+typedef long int __ssize_t;
+
+
+typedef long int __syscall_slong_t;
+
+typedef unsigned long int __syscall_ulong_t;
+
+
+
+typedef __off64_t __loff_t;
+typedef char *__caddr_t;
+
+
+typedef long int __intptr_t;
+
+
+typedef unsigned int __socklen_t;
+
+
+
+
+typedef int __sig_atomic_t;
+# 36 "/usr/include/stdio.h" 2 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/types/__FILE.h" 1 3 4
+
+
+
+struct _IO_FILE;
+typedef struct _IO_FILE __FILE;
+# 37 "/usr/include/stdio.h" 2 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/types/FILE.h" 1 3 4
+
+
+
+struct _IO_FILE;
+
+
+typedef struct _IO_FILE FILE;
+# 38 "/usr/include/stdio.h" 2 3 4
+
+
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/libio.h" 1 3 4
+# 35 "/usr/include/x86_64-linux-gnu/bits/libio.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/_G_config.h" 1 3 4
+# 19 "/usr/include/x86_64-linux-gnu/bits/_G_config.h" 3 4
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/7/include/stddef.h" 1 3 4
+# 20 "/usr/include/x86_64-linux-gnu/bits/_G_config.h" 2 3 4
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h" 1 3 4
+# 13 "/usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h" 3 4
+typedef struct
+{
+  int __count;
+  union
+  {
+    unsigned int __wch;
+    char __wchb[4];
+  } __value;
+} __mbstate_t;
+# 22 "/usr/include/x86_64-linux-gnu/bits/_G_config.h" 2 3 4
+
+
+
+
+typedef struct
+{
+  __off_t __pos;
+  __mbstate_t __state;
+} _G_fpos_t;
+typedef struct
+{
+  __off64_t __pos;
+  __mbstate_t __state;
+} _G_fpos64_t;
+# 36 "/usr/include/x86_64-linux-gnu/bits/libio.h" 2 3 4
+# 149 "/usr/include/x86_64-linux-gnu/bits/libio.h" 3 4
+struct _IO_jump_t; struct _IO_FILE;
+
+
+
+
+typedef void _IO_lock_t;
+
+
+
+
+
+struct _IO_marker {
+  struct _IO_marker *_next;
+  struct _IO_FILE *_sbuf;
+
+
+
+  int _pos;
+# 177 "/usr/include/x86_64-linux-gnu/bits/libio.h" 3 4
+};
+
+
+enum __codecvt_result
+{
+  __codecvt_ok,
+  __codecvt_partial,
+  __codecvt_error,
+  __codecvt_noconv
+};
+# 245 "/usr/include/x86_64-linux-gnu/bits/libio.h" 3 4
+struct _IO_FILE {
+  int _flags;
+
+
+
+
+  char* _IO_read_ptr;
+  char* _IO_read_end;
+  char* _IO_read_base;
+  char* _IO_write_base;
+  char* _IO_write_ptr;
+  char* _IO_write_end;
+  char* _IO_buf_base;
+  char* _IO_buf_end;
+
+  char *_IO_save_base;
+  char *_IO_backup_base;
+  char *_IO_save_end;
+
+  struct _IO_marker *_markers;
+
+  struct _IO_FILE *_chain;
+
+  int _fileno;
+
+
+
+  int _flags2;
+
+  __off_t _old_offset;
+
+
+
+  unsigned short _cur_column;
+  signed char _vtable_offset;
+  char _shortbuf[1];
+
+
+
+  _IO_lock_t *_lock;
+# 293 "/usr/include/x86_64-linux-gnu/bits/libio.h" 3 4
+  __off64_t _offset;
+
+
+
+
+
+
+
+  void *__pad1;
+  void *__pad2;
+  void *__pad3;
+  void *__pad4;
+
+  size_t __pad5;
+  int _mode;
+
+  char _unused2[15 * sizeof (int) - 4 * sizeof (void *) - sizeof (size_t)];
+
+};
+
+
+typedef struct _IO_FILE _IO_FILE;
+
+
+struct _IO_FILE_plus;
+
+extern struct _IO_FILE_plus _IO_2_1_stdin_;
+extern struct _IO_FILE_plus _IO_2_1_stdout_;
+extern struct _IO_FILE_plus _IO_2_1_stderr_;
+# 337 "/usr/include/x86_64-linux-gnu/bits/libio.h" 3 4
+typedef __ssize_t __io_read_fn (void *__cookie, char *__buf, size_t __nbytes);
+
+
+
+
+
+
+
+typedef __ssize_t __io_write_fn (void *__cookie, const char *__buf,
+     size_t __n);
+
+
+
+
+
+
+
+typedef int __io_seek_fn (void *__cookie, __off64_t *__pos, int __w);
+
+
+typedef int __io_close_fn (void *__cookie);
+# 389 "/usr/include/x86_64-linux-gnu/bits/libio.h" 3 4
+extern int __underflow (_IO_FILE *);
+extern int __uflow (_IO_FILE *);
+extern int __overflow (_IO_FILE *, int);
+# 433 "/usr/include/x86_64-linux-gnu/bits/libio.h" 3 4
+extern int _IO_getc (_IO_FILE *__fp);
+extern int _IO_putc (int __c, _IO_FILE *__fp);
+extern int _IO_feof (_IO_FILE *__fp) __attribute__ ((__nothrow__ , __leaf__));
+extern int _IO_ferror (_IO_FILE *__fp) __attribute__ ((__nothrow__ , __leaf__));
+
+extern int _IO_peekc_locked (_IO_FILE *__fp);
+
+
+
+
+
+extern void _IO_flockfile (_IO_FILE *) __attribute__ ((__nothrow__ , __leaf__));
+extern void _IO_funlockfile (_IO_FILE *) __attribute__ ((__nothrow__ , __leaf__));
+extern int _IO_ftrylockfile (_IO_FILE *) __attribute__ ((__nothrow__ , __leaf__));
+# 462 "/usr/include/x86_64-linux-gnu/bits/libio.h" 3 4
+extern int _IO_vfscanf (_IO_FILE * __restrict, const char * __restrict,
+   __gnuc_va_list, int *__restrict);
+extern int _IO_vfprintf (_IO_FILE *__restrict, const char *__restrict,
+    __gnuc_va_list);
+extern __ssize_t _IO_padn (_IO_FILE *, int, __ssize_t);
+extern size_t _IO_sgetn (_IO_FILE *, void *, size_t);
+
+extern __off64_t _IO_seekoff (_IO_FILE *, __off64_t, int, int);
+extern __off64_t _IO_seekpos (_IO_FILE *, __off64_t, int);
+
+extern void _IO_free_backup_area (_IO_FILE *) __attribute__ ((__nothrow__ , __leaf__));
+# 42 "/usr/include/stdio.h" 2 3 4
+# 57 "/usr/include/stdio.h" 3 4
+typedef __off_t off_t;
+# 71 "/usr/include/stdio.h" 3 4
+typedef __ssize_t ssize_t;
+
+
+
+
+
+
+typedef _G_fpos_t fpos_t;
+# 131 "/usr/include/stdio.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/stdio_lim.h" 1 3 4
+# 132 "/usr/include/stdio.h" 2 3 4
+
+
+
+extern struct _IO_FILE *stdin;
+extern struct _IO_FILE *stdout;
+extern struct _IO_FILE *stderr;
+
+
+
+
+
+
+extern int remove (const char *__filename) __attribute__ ((__nothrow__ , __leaf__));
+
+extern int rename (const char *__old, const char *__new) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern int renameat (int __oldfd, const char *__old, int __newfd,
+       const char *__new) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+
+extern FILE *tmpfile (void) ;
+# 173 "/usr/include/stdio.h" 3 4
+extern char *tmpnam (char *__s) __attribute__ ((__nothrow__ , __leaf__)) ;
+
+
+
+
+extern char *tmpnam_r (char *__s) __attribute__ ((__nothrow__ , __leaf__)) ;
+# 190 "/usr/include/stdio.h" 3 4
+extern char *tempnam (const char *__dir, const char *__pfx)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__malloc__)) ;
+
+
+
+
+
+
+
+extern int fclose (FILE *__stream);
+
+
+
+
+extern int fflush (FILE *__stream);
+# 213 "/usr/include/stdio.h" 3 4
+extern int fflush_unlocked (FILE *__stream);
+# 232 "/usr/include/stdio.h" 3 4
+extern FILE *fopen (const char *__restrict __filename,
+      const char *__restrict __modes) ;
+
+
+
+
+extern FILE *freopen (const char *__restrict __filename,
+        const char *__restrict __modes,
+        FILE *__restrict __stream) ;
+# 265 "/usr/include/stdio.h" 3 4
+extern FILE *fdopen (int __fd, const char *__modes) __attribute__ ((__nothrow__ , __leaf__)) ;
+# 278 "/usr/include/stdio.h" 3 4
+extern FILE *fmemopen (void *__s, size_t __len, const char *__modes)
+  __attribute__ ((__nothrow__ , __leaf__)) ;
+
+
+
+
+extern FILE *open_memstream (char **__bufloc, size_t *__sizeloc) __attribute__ ((__nothrow__ , __leaf__)) ;
+
+
+
+
+
+extern void setbuf (FILE *__restrict __stream, char *__restrict __buf) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern int setvbuf (FILE *__restrict __stream, char *__restrict __buf,
+      int __modes, size_t __n) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+extern void setbuffer (FILE *__restrict __stream, char *__restrict __buf,
+         size_t __size) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern void setlinebuf (FILE *__stream) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+
+
+
+
+extern int fprintf (FILE *__restrict __stream,
+      const char *__restrict __format, ...);
+
+
+
+
+extern int printf (const char *__restrict __format, ...);
+
+extern int sprintf (char *__restrict __s,
+      const char *__restrict __format, ...) __attribute__ ((__nothrow__));
+
+
+
+
+
+extern int vfprintf (FILE *__restrict __s, const char *__restrict __format,
+       __gnuc_va_list __arg);
+
+
+
+
+extern int vprintf (const char *__restrict __format, __gnuc_va_list __arg);
+
+extern int vsprintf (char *__restrict __s, const char *__restrict __format,
+       __gnuc_va_list __arg) __attribute__ ((__nothrow__));
+
+
+
+extern int snprintf (char *__restrict __s, size_t __maxlen,
+       const char *__restrict __format, ...)
+     __attribute__ ((__nothrow__)) __attribute__ ((__format__ (__printf__, 3, 4)));
+
+extern int vsnprintf (char *__restrict __s, size_t __maxlen,
+        const char *__restrict __format, __gnuc_va_list __arg)
+     __attribute__ ((__nothrow__)) __attribute__ ((__format__ (__printf__, 3, 0)));
+# 365 "/usr/include/stdio.h" 3 4
+extern int vdprintf (int __fd, const char *__restrict __fmt,
+       __gnuc_va_list __arg)
+     __attribute__ ((__format__ (__printf__, 2, 0)));
+extern int dprintf (int __fd, const char *__restrict __fmt, ...)
+     __attribute__ ((__format__ (__printf__, 2, 3)));
+
+
+
+
+
+
+
+extern int fscanf (FILE *__restrict __stream,
+     const char *__restrict __format, ...) ;
+
+
+
+
+extern int scanf (const char *__restrict __format, ...) ;
+
+extern int sscanf (const char *__restrict __s,
+     const char *__restrict __format, ...) __attribute__ ((__nothrow__ , __leaf__));
+# 395 "/usr/include/stdio.h" 3 4
+extern int fscanf (FILE *__restrict __stream, const char *__restrict __format, ...) __asm__ ("" "__isoc99_fscanf")
+
+                               ;
+extern int scanf (const char *__restrict __format, ...) __asm__ ("" "__isoc99_scanf")
+                              ;
+extern int sscanf (const char *__restrict __s, const char *__restrict __format, ...) __asm__ ("" "__isoc99_sscanf") __attribute__ ((__nothrow__ , __leaf__))
+
+                      ;
+# 420 "/usr/include/stdio.h" 3 4
+extern int vfscanf (FILE *__restrict __s, const char *__restrict __format,
+      __gnuc_va_list __arg)
+     __attribute__ ((__format__ (__scanf__, 2, 0))) ;
+
+
+
+
+
+extern int vscanf (const char *__restrict __format, __gnuc_va_list __arg)
+     __attribute__ ((__format__ (__scanf__, 1, 0))) ;
+
+
+extern int vsscanf (const char *__restrict __s,
+      const char *__restrict __format, __gnuc_va_list __arg)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__format__ (__scanf__, 2, 0)));
+# 443 "/usr/include/stdio.h" 3 4
+extern int vfscanf (FILE *__restrict __s, const char *__restrict __format, __gnuc_va_list __arg) __asm__ ("" "__isoc99_vfscanf")
+
+
+
+     __attribute__ ((__format__ (__scanf__, 2, 0))) ;
+extern int vscanf (const char *__restrict __format, __gnuc_va_list __arg) __asm__ ("" "__isoc99_vscanf")
+
+     __attribute__ ((__format__ (__scanf__, 1, 0))) ;
+extern int vsscanf (const char *__restrict __s, const char *__restrict __format, __gnuc_va_list __arg) __asm__ ("" "__isoc99_vsscanf") __attribute__ ((__nothrow__ , __leaf__))
+
+
+
+     __attribute__ ((__format__ (__scanf__, 2, 0)));
+# 477 "/usr/include/stdio.h" 3 4
+extern int fgetc (FILE *__stream);
+extern int getc (FILE *__stream);
+
+
+
+
+
+extern int getchar (void);
+# 495 "/usr/include/stdio.h" 3 4
+extern int getc_unlocked (FILE *__stream);
+extern int getchar_unlocked (void);
+# 506 "/usr/include/stdio.h" 3 4
+extern int fgetc_unlocked (FILE *__stream);
+# 517 "/usr/include/stdio.h" 3 4
+extern int fputc (int __c, FILE *__stream);
+extern int putc (int __c, FILE *__stream);
+
+
+
+
+
+extern int putchar (int __c);
+# 537 "/usr/include/stdio.h" 3 4
+extern int fputc_unlocked (int __c, FILE *__stream);
+
+
+
+
+
+
+
+extern int putc_unlocked (int __c, FILE *__stream);
+extern int putchar_unlocked (int __c);
+
+
+
+
+
+
+extern int getw (FILE *__stream);
+
+
+extern int putw (int __w, FILE *__stream);
+
+
+
+
+
+
+
+extern char *fgets (char *__restrict __s, int __n, FILE *__restrict __stream)
+     ;
+# 603 "/usr/include/stdio.h" 3 4
+extern __ssize_t __getdelim (char **__restrict __lineptr,
+          size_t *__restrict __n, int __delimiter,
+          FILE *__restrict __stream) ;
+extern __ssize_t getdelim (char **__restrict __lineptr,
+        size_t *__restrict __n, int __delimiter,
+        FILE *__restrict __stream) ;
+
+
+
+
+
+
+
+extern __ssize_t getline (char **__restrict __lineptr,
+       size_t *__restrict __n,
+       FILE *__restrict __stream) ;
+
+
+
+
+
+
+
+extern int fputs (const char *__restrict __s, FILE *__restrict __stream);
+
+
+
+
+
+extern int puts (const char *__s);
+
+
+
+
+
+
+extern int ungetc (int __c, FILE *__stream);
+
+
+
+
+
+
+extern size_t fread (void *__restrict __ptr, size_t __size,
+       size_t __n, FILE *__restrict __stream) ;
+
+
+
+
+extern size_t fwrite (const void *__restrict __ptr, size_t __size,
+        size_t __n, FILE *__restrict __s);
+# 673 "/usr/include/stdio.h" 3 4
+extern size_t fread_unlocked (void *__restrict __ptr, size_t __size,
+         size_t __n, FILE *__restrict __stream) ;
+extern size_t fwrite_unlocked (const void *__restrict __ptr, size_t __size,
+          size_t __n, FILE *__restrict __stream);
+
+
+
+
+
+
+
+extern int fseek (FILE *__stream, long int __off, int __whence);
+
+
+
+
+extern long int ftell (FILE *__stream) ;
+
+
+
+
+extern void rewind (FILE *__stream);
+# 707 "/usr/include/stdio.h" 3 4
+extern int fseeko (FILE *__stream, __off_t __off, int __whence);
+
+
+
+
+extern __off_t ftello (FILE *__stream) ;
+# 731 "/usr/include/stdio.h" 3 4
+extern int fgetpos (FILE *__restrict __stream, fpos_t *__restrict __pos);
+
+
+
+
+extern int fsetpos (FILE *__stream, const fpos_t *__pos);
+# 757 "/usr/include/stdio.h" 3 4
+extern void clearerr (FILE *__stream) __attribute__ ((__nothrow__ , __leaf__));
+
+extern int feof (FILE *__stream) __attribute__ ((__nothrow__ , __leaf__)) ;
+
+extern int ferror (FILE *__stream) __attribute__ ((__nothrow__ , __leaf__)) ;
+
+
+
+extern void clearerr_unlocked (FILE *__stream) __attribute__ ((__nothrow__ , __leaf__));
+extern int feof_unlocked (FILE *__stream) __attribute__ ((__nothrow__ , __leaf__)) ;
+extern int ferror_unlocked (FILE *__stream) __attribute__ ((__nothrow__ , __leaf__)) ;
+
+
+
+
+
+
+
+extern void perror (const char *__s);
+
+
+
+
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/sys_errlist.h" 1 3 4
+# 26 "/usr/include/x86_64-linux-gnu/bits/sys_errlist.h" 3 4
+extern int sys_nerr;
+extern const char *const sys_errlist[];
+# 782 "/usr/include/stdio.h" 2 3 4
+
+
+
+
+extern int fileno (FILE *__stream) __attribute__ ((__nothrow__ , __leaf__)) ;
+
+
+
+
+extern int fileno_unlocked (FILE *__stream) __attribute__ ((__nothrow__ , __leaf__)) ;
+# 800 "/usr/include/stdio.h" 3 4
+extern FILE *popen (const char *__command, const char *__modes) ;
+
+
+
+
+
+extern int pclose (FILE *__stream);
+
+
+
+
+
+extern char *ctermid (char *__s) __attribute__ ((__nothrow__ , __leaf__));
+# 840 "/usr/include/stdio.h" 3 4
+extern void flockfile (FILE *__stream) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+extern int ftrylockfile (FILE *__stream) __attribute__ ((__nothrow__ , __leaf__)) ;
+
+
+extern void funlockfile (FILE *__stream) __attribute__ ((__nothrow__ , __leaf__));
+# 868 "/usr/include/stdio.h" 3 4
+
+# 6 "../src/test_array.c" 2
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/7/include/stdbool.h" 1 3 4
+# 7 "../src/test_array.c" 2
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/7/include/stdint.h" 1 3 4
+# 9 "/usr/lib/gcc/x86_64-linux-gnu/7/include/stdint.h" 3 4
+# 1 "/usr/include/stdint.h" 1 3 4
+# 26 "/usr/include/stdint.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/libc-header-start.h" 1 3 4
+# 27 "/usr/include/stdint.h" 2 3 4
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/wchar.h" 1 3 4
+# 29 "/usr/include/stdint.h" 2 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/wordsize.h" 1 3 4
+# 30 "/usr/include/stdint.h" 2 3 4
+
+
+
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/stdint-intn.h" 1 3 4
+# 24 "/usr/include/x86_64-linux-gnu/bits/stdint-intn.h" 3 4
+typedef __int8_t int8_t;
+typedef __int16_t int16_t;
+typedef __int32_t int32_t;
+typedef __int64_t int64_t;
+# 35 "/usr/include/stdint.h" 2 3 4
+
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/stdint-uintn.h" 1 3 4
+# 24 "/usr/include/x86_64-linux-gnu/bits/stdint-uintn.h" 3 4
+typedef __uint8_t uint8_t;
+typedef __uint16_t uint16_t;
+typedef __uint32_t uint32_t;
+typedef __uint64_t uint64_t;
+# 38 "/usr/include/stdint.h" 2 3 4
+
+
+
+
+
+typedef signed char int_least8_t;
+typedef short int int_least16_t;
+typedef int int_least32_t;
+
+typedef long int int_least64_t;
+
+
+
+
+
+
+typedef unsigned char uint_least8_t;
+typedef unsigned short int uint_least16_t;
+typedef unsigned int uint_least32_t;
+
+typedef unsigned long int uint_least64_t;
+# 68 "/usr/include/stdint.h" 3 4
+typedef signed char int_fast8_t;
+
+typedef long int int_fast16_t;
+typedef long int int_fast32_t;
+typedef long int int_fast64_t;
+# 81 "/usr/include/stdint.h" 3 4
+typedef unsigned char uint_fast8_t;
+
+typedef unsigned long int uint_fast16_t;
+typedef unsigned long int uint_fast32_t;
+typedef unsigned long int uint_fast64_t;
+# 97 "/usr/include/stdint.h" 3 4
+typedef long int intptr_t;
+
+
+typedef unsigned long int uintptr_t;
+# 111 "/usr/include/stdint.h" 3 4
+typedef __intmax_t intmax_t;
+typedef __uintmax_t uintmax_t;
+# 10 "/usr/lib/gcc/x86_64-linux-gnu/7/include/stdint.h" 2 3 4
+# 8 "../src/test_array.c" 2
+# 1 "/usr/include/string.h" 1 3 4
+# 26 "/usr/include/string.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/libc-header-start.h" 1 3 4
+# 27 "/usr/include/string.h" 2 3 4
+
+
+
+
+
+
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/7/include/stddef.h" 1 3 4
+# 34 "/usr/include/string.h" 2 3 4
+# 42 "/usr/include/string.h" 3 4
+extern void *memcpy (void *__restrict __dest, const void *__restrict __src,
+       size_t __n) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern void *memmove (void *__dest, const void *__src, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+
+
+extern void *memccpy (void *__restrict __dest, const void *__restrict __src,
+        int __c, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+
+extern void *memset (void *__s, int __c, size_t __n) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+extern int memcmp (const void *__s1, const void *__s2, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+# 90 "/usr/include/string.h" 3 4
+extern void *memchr (const void *__s, int __c, size_t __n)
+      __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+# 121 "/usr/include/string.h" 3 4
+extern char *strcpy (char *__restrict __dest, const char *__restrict __src)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+extern char *strncpy (char *__restrict __dest,
+        const char *__restrict __src, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern char *strcat (char *__restrict __dest, const char *__restrict __src)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+extern char *strncat (char *__restrict __dest, const char *__restrict __src,
+        size_t __n) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern int strcmp (const char *__s1, const char *__s2)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+
+extern int strncmp (const char *__s1, const char *__s2, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern int strcoll (const char *__s1, const char *__s2)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+
+extern size_t strxfrm (char *__restrict __dest,
+         const char *__restrict __src, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2)));
+
+
+
+# 1 "/usr/include/x86_64-linux-gnu/bits/types/locale_t.h" 1 3 4
+# 22 "/usr/include/x86_64-linux-gnu/bits/types/locale_t.h" 3 4
+# 1 "/usr/include/x86_64-linux-gnu/bits/types/__locale_t.h" 1 3 4
+# 28 "/usr/include/x86_64-linux-gnu/bits/types/__locale_t.h" 3 4
+struct __locale_struct
+{
+
+  struct __locale_data *__locales[13];
+
+
+  const unsigned short int *__ctype_b;
+  const int *__ctype_tolower;
+  const int *__ctype_toupper;
+
+
+  const char *__names[13];
+};
+
+typedef struct __locale_struct *__locale_t;
+# 23 "/usr/include/x86_64-linux-gnu/bits/types/locale_t.h" 2 3 4
+
+typedef __locale_t locale_t;
+# 153 "/usr/include/string.h" 2 3 4
+
+
+extern int strcoll_l (const char *__s1, const char *__s2, locale_t __l)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2, 3)));
+
+
+extern size_t strxfrm_l (char *__dest, const char *__src, size_t __n,
+    locale_t __l) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2, 4)));
+
+
+
+
+
+extern char *strdup (const char *__s)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__malloc__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+
+extern char *strndup (const char *__string, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__malloc__)) __attribute__ ((__nonnull__ (1)));
+# 225 "/usr/include/string.h" 3 4
+extern char *strchr (const char *__s, int __c)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+# 252 "/usr/include/string.h" 3 4
+extern char *strrchr (const char *__s, int __c)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+# 272 "/usr/include/string.h" 3 4
+extern size_t strcspn (const char *__s, const char *__reject)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern size_t strspn (const char *__s, const char *__accept)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+# 302 "/usr/include/string.h" 3 4
+extern char *strpbrk (const char *__s, const char *__accept)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+# 329 "/usr/include/string.h" 3 4
+extern char *strstr (const char *__haystack, const char *__needle)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+
+extern char *strtok (char *__restrict __s, const char *__restrict __delim)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2)));
+
+
+
+extern char *__strtok_r (char *__restrict __s,
+    const char *__restrict __delim,
+    char **__restrict __save_ptr)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2, 3)));
+
+extern char *strtok_r (char *__restrict __s, const char *__restrict __delim,
+         char **__restrict __save_ptr)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (2, 3)));
+# 384 "/usr/include/string.h" 3 4
+extern size_t strlen (const char *__s)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+extern size_t strnlen (const char *__string, size_t __maxlen)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+extern char *strerror (int __errnum) __attribute__ ((__nothrow__ , __leaf__));
+# 409 "/usr/include/string.h" 3 4
+extern int strerror_r (int __errnum, char *__buf, size_t __buflen) __asm__ ("" "__xpg_strerror_r") __attribute__ ((__nothrow__ , __leaf__))
+
+                        __attribute__ ((__nonnull__ (2)));
+# 427 "/usr/include/string.h" 3 4
+extern char *strerror_l (int __errnum, locale_t __l) __attribute__ ((__nothrow__ , __leaf__));
+
+
+
+# 1 "/usr/include/strings.h" 1 3 4
+# 23 "/usr/include/strings.h" 3 4
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/7/include/stddef.h" 1 3 4
+# 24 "/usr/include/strings.h" 2 3 4
+
+
+
+
+
+
+
+
+
+
+extern int bcmp (const void *__s1, const void *__s2, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern void bcopy (const void *__src, void *__dest, size_t __n)
+  __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern void bzero (void *__s, size_t __n) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+# 68 "/usr/include/strings.h" 3 4
+extern char *index (const char *__s, int __c)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+# 96 "/usr/include/strings.h" 3 4
+extern char *rindex (const char *__s, int __c)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+
+extern int ffs (int __i) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+
+
+
+extern int ffsl (long int __l) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+__extension__ extern int ffsll (long long int __ll)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__const__));
+
+
+
+extern int strcasecmp (const char *__s1, const char *__s2)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern int strncasecmp (const char *__s1, const char *__s2, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+
+
+
+extern int strcasecmp_l (const char *__s1, const char *__s2, locale_t __loc)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2, 3)));
+
+
+
+extern int strncasecmp_l (const char *__s1, const char *__s2,
+     size_t __n, locale_t __loc)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2, 4)));
+
+
+
+# 432 "/usr/include/string.h" 2 3 4
+
+
+
+extern void explicit_bzero (void *__s, size_t __n) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+extern char *strsep (char **__restrict __stringp,
+       const char *__restrict __delim)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+
+extern char *strsignal (int __sig) __attribute__ ((__nothrow__ , __leaf__));
+
+
+extern char *__stpcpy (char *__restrict __dest, const char *__restrict __src)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+extern char *stpcpy (char *__restrict __dest, const char *__restrict __src)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+extern char *__stpncpy (char *__restrict __dest,
+   const char *__restrict __src, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+extern char *stpncpy (char *__restrict __dest,
+        const char *__restrict __src, size_t __n)
+     __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1, 2)));
+# 498 "/usr/include/string.h" 3 4
+
+# 9 "../src/test_array.c" 2
+# 1 "../src/array.h" 1
+# 10 "../src/array.h"
+
+# 10 "../src/array.h"
+struct Array {
+  char* _data;
+  unsigned int _length;
+  unsigned int _type_size;
+  unsigned int _size;
+
+  
+# 16 "../src/array.h" 3 4
+ _Bool 
+# 16 "../src/array.h"
+      _is_primitive_typed;
+
+  int (*_cast)(void* element);
+  int (*_resize)(struct Array* self, unsigned int new_size);
+  int (*get)(const struct Array* self, int index, void** element);
+  int (*insert)(struct Array* self, int index, void* element);
+  int (*append)(struct Array* self, void** element);
+  int (*prepend)(struct Array* self, void** element);
+  int (*get_front)(const struct Array* self);
+  int (*get_rear)(const struct Array* self);
+  int (*take_front)(struct Array* self);
+  int (*take_rear)(struct Array* self);
+
+  void* (*get_voidptr)(int index);
+  int (*concat)(struct Array* self, const struct Array* other);
+  int (*concat_and_take)(struct Array* self, struct Array* other);
+  int (*find)(const struct Array* self, const void* element);
+  int (*remove)(struct Array* self, const void* element);
+  
+# 34 "../src/array.h" 3 4
+ _Bool 
+# 34 "../src/array.h"
+      (*contains)(const struct Array* self, const void* element);
+  struct Array* (*reverse)(const struct Array* self);
+  int (*mod_reverse)(struct Array* self);
+
+
+
+
+
+
+} typedef Array;
+
+struct {
+  unsigned int initial_size;
+  int (*element_cast_function)(void* element);
+
+
+
+
+  
+# 52 "../src/array.h" 3 4
+ _Bool 
+# 52 "../src/array.h"
+      is_primitive_typed;
+
+
+
+} typedef _clib_array_init;
+
+int _clib_void_ptr_cast(void* element) {
+  return 0;
+}
+
+struct Array* _clib_new_Array(unsigned int type_size, _clib_array_init args);
+# 78 "../src/array.h"
+int clib_Array_insert(struct Array* self, int index, void* element);
+int clib_Array__resize(struct Array* self, unsigned int new_size);
+int clib_Array_get(const struct Array* self, int index,void** element);
+void* clib_Array_get_voidptr(int index);
+int clib_Array_concat(struct Array* self, const struct Array* other);
+int clib_Array_concat_and_take(struct Array* self, struct Array* other);
+int clib_Array_find(const struct Array* self, const void* element);
+int clib_Array_remove(struct Array* self, const void* element);
+
+# 86 "../src/array.h" 3 4
+_Bool 
+# 86 "../src/array.h"
+    clib_Array_contains(const struct Array* self, const void* element);
+struct Array* clib_Array_reverse(const struct Array* self);
+int clib_Array_mod_reverse(struct Array* self);
+# 10 "../src/test_array.c" 2
+# 18 "../src/test_array.c"
+int _test_cast_function(void* element) {
+  char* temp = (char*) element;
+  temp = "string";
+}
+void test_clib_new_Array(void** state) {
+
+  Array* array = _clib_new_Array(sizeof(int), (_clib_array_init){ .initial_size=8, .element_cast_function=_clib_void_ptr_cast, .is_primitive_typed=
+# 24 "../src/test_array.c" 3 4
+                0
+# 24 "../src/test_array.c"
+                , });
+  int* raw_array = (int*) array->_data;
+  
+# 26 "../src/test_array.c" 3 4
+ _assert_int_equal(((unsigned long int)(
+# 26 "../src/test_array.c"
+ 0
+# 26 "../src/test_array.c" 3 4
+ )), ((unsigned long int)(
+# 26 "../src/test_array.c"
+ array->_length
+# 26 "../src/test_array.c" 3 4
+ )), "../src/test_array.c", 26)
+# 26 "../src/test_array.c"
+                                    ;
+  
+# 27 "../src/test_array.c" 3 4
+ _assert_int_equal(((unsigned long int)(
+# 27 "../src/test_array.c"
+ 8
+# 27 "../src/test_array.c" 3 4
+ )), ((unsigned long int)(
+# 27 "../src/test_array.c"
+ array->_size
+# 27 "../src/test_array.c" 3 4
+ )), "../src/test_array.c", 27)
+# 27 "../src/test_array.c"
+                                  ;
+  
+# 28 "../src/test_array.c" 3 4
+ _assert_int_equal(((unsigned long int)(
+# 28 "../src/test_array.c"
+ sizeof(int)
+# 28 "../src/test_array.c" 3 4
+ )), ((unsigned long int)(
+# 28 "../src/test_array.c"
+ array->_type_size
+# 28 "../src/test_array.c" 3 4
+ )), "../src/test_array.c", 28)
+# 28 "../src/test_array.c"
+                                                 ;
+  
+# 29 "../src/test_array.c" 3 4
+ _assert_int_equal(((unsigned long int)(((uintptr_t)((size_t)(
+# 29 "../src/test_array.c"
+ array->_cast
+# 29 "../src/test_array.c" 3 4
+ ))))), ((unsigned long int)(((uintptr_t)((size_t)(
+# 29 "../src/test_array.c"
+ _clib_void_ptr_cast
+# 29 "../src/test_array.c" 3 4
+ ))))),
+                                      "../src/test_array.c"
+# 29 "../src/test_array.c" 3 4
+  ,
+                                      30
+# 29 "../src/test_array.c" 3 4
+  )
+                                       
+# 30 "../src/test_array.c"
+                                      ;
+  
+# 31 "../src/test_array.c" 3 4
+ _assert_memory_equal((const void*)(
+# 31 "../src/test_array.c"
+ ((int[]){0,0,0,0,0,0,0,0})
+# 31 "../src/test_array.c" 3 4
+ ), (const void*)(
+# 31 "../src/test_array.c"
+ raw_array
+# 31 "../src/test_array.c" 3 4
+ ), 
+# 31 "../src/test_array.c"
+ 8*sizeof(int)
+# 31 "../src/test_array.c" 3 4
+ , "../src/test_array.c", 31)
+# 31 "../src/test_array.c"
+                                                                          ;
+
+  Array* array2 =
+    _clib_new_Array(sizeof(char*), (_clib_array_init){ .initial_size=8, .element_cast_function=_clib_void_ptr_cast, .is_primitive_typed=
+# 34 "../src/test_array.c" 3 4
+   0
+# 34 "../src/test_array.c"
+   , .initial_size=12, .element_cast_function=_test_cast_function})
+
+                                                              ;
+  char** raw_array2 = (char**) array2->_data;
+  
+# 38 "../src/test_array.c" 3 4
+ _assert_int_equal(((unsigned long int)(
+# 38 "../src/test_array.c"
+ 0
+# 38 "../src/test_array.c" 3 4
+ )), ((unsigned long int)(
+# 38 "../src/test_array.c"
+ array2->_length
+# 38 "../src/test_array.c" 3 4
+ )), "../src/test_array.c", 38)
+# 38 "../src/test_array.c"
+                                     ;
+  
+# 39 "../src/test_array.c" 3 4
+ _assert_int_equal(((unsigned long int)(
+# 39 "../src/test_array.c"
+ 12
+# 39 "../src/test_array.c" 3 4
+ )), ((unsigned long int)(
+# 39 "../src/test_array.c"
+ array2->_size
+# 39 "../src/test_array.c" 3 4
+ )), "../src/test_array.c", 39)
+# 39 "../src/test_array.c"
+                                    ;
+  
+# 40 "../src/test_array.c" 3 4
+ _assert_int_equal(((unsigned long int)(
+# 40 "../src/test_array.c"
+ sizeof(char*)
+# 40 "../src/test_array.c" 3 4
+ )), ((unsigned long int)(
+# 40 "../src/test_array.c"
+ array2->_type_size
+# 40 "../src/test_array.c" 3 4
+ )), "../src/test_array.c", 40)
+# 40 "../src/test_array.c"
+                                                    ;
+  
+# 41 "../src/test_array.c" 3 4
+ _assert_int_equal(((unsigned long int)(((uintptr_t)((size_t)(
+# 41 "../src/test_array.c"
+ array2->_cast
+# 41 "../src/test_array.c" 3 4
+ ))))), ((unsigned long int)(((uintptr_t)((size_t)(
+# 41 "../src/test_array.c"
+ _test_cast_function
+# 41 "../src/test_array.c" 3 4
+ ))))),
+                                      "../src/test_array.c"
+# 41 "../src/test_array.c" 3 4
+  ,
+                                      42
+# 41 "../src/test_array.c" 3 4
+  )
+                                       
+# 42 "../src/test_array.c"
+                                      ;
+  
+# 43 "../src/test_array.c" 3 4
+ _assert_memory_equal((const void*)(
+# 43 "../src/test_array.c"
+ ((int[]){0,0,0,0,0,0,0,0,0,0,0,0})
+# 43 "../src/test_array.c" 3 4
+ ), (const void*)(
+# 43 "../src/test_array.c"
+ raw_array2
+# 43 "../src/test_array.c" 3 4
+ ), 
+# 43 "../src/test_array.c"
+ 12*sizeof(int)
+# 43 "../src/test_array.c" 3 4
+ , "../src/test_array.c", 43)
+# 43 "../src/test_array.c"
+                                                                                    ;
+}
+
+void test_clib_Array_insert(void** state) {
+  Array* array = _clib_new_Array(sizeof(int), (_clib_array_init){ .initial_size=8, .element_cast_function=_clib_void_ptr_cast, .is_primitive_typed=
+# 47 "../src/test_array.c" 3 4
+                0
+# 47 "../src/test_array.c"
+                , .is_primitive_typed=
+# 47 "../src/test_array.c" 3 4
+                1
+# 47 "../src/test_array.c"
+                });
+
+  int err = array->insert(array, 1, 10);
+  
+# 50 "../src/test_array.c" 3 4
+ _assert_int_equal(((unsigned long int)(
+# 50 "../src/test_array.c"
+ -1
+# 50 "../src/test_array.c" 3 4
+ )), ((unsigned long int)(
+# 50 "../src/test_array.c"
+ err
+# 50 "../src/test_array.c" 3 4
+ )), "../src/test_array.c", 50)
+# 50 "../src/test_array.c"
+                          ;
+
+  err = array->insert(array, 0, 10);
+  
+# 53 "../src/test_array.c" 3 4
+ _assert_int_equal(((unsigned long int)(
+# 53 "../src/test_array.c"
+ 0
+# 53 "../src/test_array.c" 3 4
+ )), ((unsigned long int)(
+# 53 "../src/test_array.c"
+ err
+# 53 "../src/test_array.c" 3 4
+ )), "../src/test_array.c", 53)
+# 53 "../src/test_array.c"
+                         ;
+  
+# 54 "../src/test_array.c" 3 4
+ _assert_int_equal(((unsigned long int)(
+# 54 "../src/test_array.c"
+ 1
+# 54 "../src/test_array.c" 3 4
+ )), ((unsigned long int)(
+# 54 "../src/test_array.c"
+ array->_length
+# 54 "../src/test_array.c" 3 4
+ )), "../src/test_array.c", 54)
+# 54 "../src/test_array.c"
+                                    ;
+  
+# 55 "../src/test_array.c" 3 4
+ _assert_memory_equal((const void*)(
+# 55 "../src/test_array.c"
+ ((int[]){10,0,0,0,0,0,0,0})
+# 55 "../src/test_array.c" 3 4
+ ), (const void*)(
+# 55 "../src/test_array.c"
+ array->_data
+# 55 "../src/test_array.c" 3 4
+ ), 
+# 55 "../src/test_array.c"
+ 8*sizeof(int)
+# 55 "../src/test_array.c" 3 4
+ , "../src/test_array.c", 55)
+# 55 "../src/test_array.c"
+                                                                              ;
+
+  err = array->insert(array, 0, 11);
+  
+# 58 "../src/test_array.c" 3 4
+ _assert_int_equal(((unsigned long int)(
+# 58 "../src/test_array.c"
+ 0
+# 58 "../src/test_array.c" 3 4
+ )), ((unsigned long int)(
+# 58 "../src/test_array.c"
+ err
+# 58 "../src/test_array.c" 3 4
+ )), "../src/test_array.c", 58)
+# 58 "../src/test_array.c"
+                         ;
+  
+# 59 "../src/test_array.c" 3 4
+ _assert_int_equal(((unsigned long int)(
+# 59 "../src/test_array.c"
+ 2
+# 59 "../src/test_array.c" 3 4
+ )), ((unsigned long int)(
+# 59 "../src/test_array.c"
+ array->_length
+# 59 "../src/test_array.c" 3 4
+ )), "../src/test_array.c", 59)
+# 59 "../src/test_array.c"
+                                    ;
+  
+# 60 "../src/test_array.c" 3 4
+ _assert_memory_equal((const void*)(
+# 60 "../src/test_array.c"
+ ((int[]){11,10,0,0,0,0,0,0})
+# 60 "../src/test_array.c" 3 4
+ ), (const void*)(
+# 60 "../src/test_array.c"
+ array->_data
+# 60 "../src/test_array.c" 3 4
+ ), 
+# 60 "../src/test_array.c"
+ 8*sizeof(int)
+# 60 "../src/test_array.c" 3 4
+ , "../src/test_array.c", 60)
+# 60 "../src/test_array.c"
+                                                                               ;
+
+  err = array->insert(array, 2, 12);
+  
+# 63 "../src/test_array.c" 3 4
+ _assert_int_equal(((unsigned long int)(
+# 63 "../src/test_array.c"
+ 0
+# 63 "../src/test_array.c" 3 4
+ )), ((unsigned long int)(
+# 63 "../src/test_array.c"
+ err
+# 63 "../src/test_array.c" 3 4
+ )), "../src/test_array.c", 63)
+# 63 "../src/test_array.c"
+                         ;
+  
+# 64 "../src/test_array.c" 3 4
+ _assert_int_equal(((unsigned long int)(
+# 64 "../src/test_array.c"
+ 3
+# 64 "../src/test_array.c" 3 4
+ )), ((unsigned long int)(
+# 64 "../src/test_array.c"
+ array->_length
+# 64 "../src/test_array.c" 3 4
+ )), "../src/test_array.c", 64)
+# 64 "../src/test_array.c"
+                                    ;
+  
+# 65 "../src/test_array.c" 3 4
+ _assert_memory_equal((const void*)(
+# 65 "../src/test_array.c"
+ ((int[]){11,10,12,0,0,0,0,0})
+# 65 "../src/test_array.c" 3 4
+ ), (const void*)(
+# 65 "../src/test_array.c"
+ array->_data
+# 65 "../src/test_array.c" 3 4
+ ), 
+# 65 "../src/test_array.c"
+ 8*sizeof(int)
+# 65 "../src/test_array.c" 3 4
+ , "../src/test_array.c", 65)
+# 65 "../src/test_array.c"
+                                                                                ;
+
+
+
+  array = _clib_new_Array(sizeof(uint8_t), (_clib_array_init){ .initial_size=8, .element_cast_function=_clib_void_ptr_cast, .is_primitive_typed=
+# 69 "../src/test_array.c" 3 4
+         0
+# 69 "../src/test_array.c"
+         , .is_primitive_typed=
+# 69 "../src/test_array.c" 3 4
+         1
+# 69 "../src/test_array.c"
+         });
+  err = array->insert(array, 0, 10);
+  
+# 71 "../src/test_array.c" 3 4
+ _assert_int_equal(((unsigned long int)(
+# 71 "../src/test_array.c"
+ 0
+# 71 "../src/test_array.c" 3 4
+ )), ((unsigned long int)(
+# 71 "../src/test_array.c"
+ err
+# 71 "../src/test_array.c" 3 4
+ )), "../src/test_array.c", 71)
+# 71 "../src/test_array.c"
+                         ;
+  
+# 72 "../src/test_array.c" 3 4
+ _assert_int_equal(((unsigned long int)(
+# 72 "../src/test_array.c"
+ 1
+# 72 "../src/test_array.c" 3 4
+ )), ((unsigned long int)(
+# 72 "../src/test_array.c"
+ array->_length
+# 72 "../src/test_array.c" 3 4
+ )), "../src/test_array.c", 72)
+# 72 "../src/test_array.c"
+                                    ;
+  
+# 73 "../src/test_array.c" 3 4
+ _assert_memory_equal((const void*)(
+# 73 "../src/test_array.c"
+ ((uint8_t[]){10,0,0,0,0,0,0,0})
+# 73 "../src/test_array.c" 3 4
+ ), (const void*)(
+# 73 "../src/test_array.c"
+ array->_data
+# 73 "../src/test_array.c" 3 4
+ ), 
+# 73 "../src/test_array.c"
+ 8*sizeof(uint8_t)
+# 73 "../src/test_array.c" 3 4
+ , "../src/test_array.c", 73)
+# 73 "../src/test_array.c"
+                                                                                      ;
+
+
+  array = _clib_new_Array(sizeof(char*), (_clib_array_init){ .initial_size=8, .element_cast_function=_clib_void_ptr_cast, .is_primitive_typed=
+# 76 "../src/test_array.c" 3 4
+         0
+# 76 "../src/test_array.c"
+         , });
+  err = array->insert(array, 0, "Hello");
+  
+# 78 "../src/test_array.c" 3 4
+ _assert_int_equal(((unsigned long int)(
+# 78 "../src/test_array.c"
+ 0
+# 78 "../src/test_array.c" 3 4
+ )), ((unsigned long int)(
+# 78 "../src/test_array.c"
+ err
+# 78 "../src/test_array.c" 3 4
+ )), "../src/test_array.c", 78)
+# 78 "../src/test_array.c"
+                         ;
+  
+# 79 "../src/test_array.c" 3 4
+ _assert_int_equal(((unsigned long int)(
+# 79 "../src/test_array.c"
+ 1
+# 79 "../src/test_array.c" 3 4
+ )), ((unsigned long int)(
+# 79 "../src/test_array.c"
+ array->_length
+# 79 "../src/test_array.c" 3 4
+ )), "../src/test_array.c", 79)
+# 79 "../src/test_array.c"
+                                    ;
+  for (int i = 0; i < array->_length; i++) if (streq("char*", "char*")) 
+# 80 "../src/test_array.c" 3 4
+ _assert_string_equal((const char*)(
+# 80 "../src/test_array.c"
+ ((char*[]){"Hello",0,0,0,0,0,0,0})
+# 80 "../src/test_array.c" 3 4
+ ), (const char*)(
+# 80 "../src/test_array.c"
+ array->_data
+# 80 "../src/test_array.c" 3 4
+ ), "../src/test_array.c", 80)
+# 80 "../src/test_array.c"
+ ; else 
+# 80 "../src/test_array.c" 3 4
+ _assert_memory_equal((const void*)(
+# 80 "../src/test_array.c"
+ ((char*[]){"Hello",0,0,0,0,0,0,0})
+# 80 "../src/test_array.c" 3 4
+ ), (const void*)(
+# 80 "../src/test_array.c"
+ array->_data
+# 80 "../src/test_array.c" 3 4
+ ), 
+# 80 "../src/test_array.c"
+ sizeof(char*)
+# 80 "../src/test_array.c" 3 4
+ , "../src/test_array.c", 80)
+# 80 "../src/test_array.c"
+                                                                                            ;
+
+
+}
+
+int main() {
+  puts("CLIB ARRAY UNIT TESTS");
+
+  const struct CMUnitTest tests[] =
+    {
+      
+# 90 "../src/test_array.c" 3 4
+     { 
+# 90 "../src/test_array.c"
+     "test_clib_new_Array"
+# 90 "../src/test_array.c" 3 4
+     , 
+# 90 "../src/test_array.c"
+     test_clib_new_Array
+# 90 "../src/test_array.c" 3 4
+     , ((void *)0), ((void *)0), ((void *)0) }
+# 90 "../src/test_array.c"
+                                          ,
+      
+# 91 "../src/test_array.c" 3 4
+     { 
+# 91 "../src/test_array.c"
+     "test_clib_Array_insert"
+# 91 "../src/test_array.c" 3 4
+     , 
+# 91 "../src/test_array.c"
+     test_clib_Array_insert
+# 91 "../src/test_array.c" 3 4
+     , ((void *)0), ((void *)0), ((void *)0) }
+    
+# 92 "../src/test_array.c"
+   };
+
+  int failed_tests =
+    
+# 95 "../src/test_array.c" 3 4
+   _cmocka_run_group_tests(
+# 95 "../src/test_array.c"
+   "tests"
+# 95 "../src/test_array.c" 3 4
+   , 
+# 95 "../src/test_array.c"
+   tests
+# 95 "../src/test_array.c" 3 4
+   , sizeof(
+# 95 "../src/test_array.c"
+   tests
+# 95 "../src/test_array.c" 3 4
+   ) / sizeof(
+# 95 "../src/test_array.c"
+   tests
+# 95 "../src/test_array.c" 3 4
+   )[0], ((void *)0), ((void *)0))
+# 95 "../src/test_array.c"
+                                            ;
+
+  return 0;
+}
