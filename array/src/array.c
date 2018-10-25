@@ -120,7 +120,7 @@ int clib_Array_concat_and_take(struct Array* self, struct Array* other){
 // TODO test
 int clib_Array_find(const struct Array* self, const void* element){
   void* canidate = NULL;
-  for (int i = 0; i < self->_length) {
+  for (int i = 0; i < self->_length; i++) {
     // TODO refactor GET VOIDPTR as (array, index)
     canidate = CLIB_ARRAY_GET_VOIDPTR(self->_data, self->_size, i);
     if ((memcmp(canidate, element, self->_size) == 0))
@@ -144,11 +144,11 @@ Array* clib_Array_reverse(const struct Array* self){
                            .element_cast_function=self->_cast,
                            .element_free_function=self->_free_element,
                            .is_primitive_typed=self->_is_primitive_typed};
-  Array* reversed = clib_new_Array(self->_type_size, args);
+  Array* reversed = _clib_new_Array(self->_type_size, args);
 
   for (int i = self->_length - 1; i >= 0; i++) {
     // TODO only shallow pointer copy (should it be deep?)
-    reversed->append(self->get(self, i));
+    reversed->append(reversed, self->get(self, i));
   }
 
   return reversed;

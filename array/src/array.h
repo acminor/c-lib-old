@@ -7,10 +7,14 @@
 #define CLIB_ARRAY_H
 
 // local and global level type assertions
-#define CLIB__STRUCTIZE(name) struct name;
-#define CLIB_NEW_LTYPE_ASSERT(QUALIFIED_NAME, TYPE) CLIB__STRUCTIZE(QUALIFIED_NAME ## TYPE)
-#define CLIB_NEW_GTYPE_ASSERT(FUNCTION, QUALIFIED_NAME, TYPE) CLIB__STRUCTIZE(FUNCTION ## QUALIFIED_NAME ## TYPE)
-#define CLIB_LTCAST(QUALIFIED_NAME, TYPE, ELEM) ((((CLIB__STRUCTIZE(QUALIFIED_NAME ## TYPE))*) NULL), (TYPE) ELEM)
+#define WRG_TYP_MSG WRONG_TYPE_CAST
+#define CLIB__STRUCTIZE(name) struct name
+#define CLIB_NEW_LTYPE_ASSERT(QUALIFIED_NAME, TYPE) \
+  CLIB__STRUCTIZE(WRG_TYPE_MSG ## QUALIFIED_NAME ## TYPE) {};
+#define CLIB_NEW_GTYPE_ASSERT(FUNCTION, QUALIFIED_NAME, TYPE) \
+  CLIB__STRUCTIZE(WRG_TYPE_MSG ## FUNCTION ## QUALIFIED_NAME ## TYPE) {};
+#define CLIB_LTCAST(QUALIFIED_NAME, TYPE, ELEM) \
+  (sizeof(CLIB__STRUCTIZE(WRG_TYPE_MSG ## QUALIFIED_NAME ## TYPE)), (TYPE) ELEM)
 #define CLIB_GTCAST(QUALIFIED_NAME, TYPE) // TODO
 
 // TODO more stuff to implement once other functionality implemented;
@@ -65,14 +69,14 @@ struct Array {
   /* struct Array* (reduce)(const struct Array* self); */
 } typedef Array;
 
-int _clib_free_wrapper(void* element) {
+int _clib_free_wrapper(struct Array* self, void* element) {
   free(element);
 }
 
 struct {
   unsigned int initial_size;
   int (*element_cast_function)(void* element);
-  int (*element_free_function)(void* element);
+  int (*element_free_function)(struct Array* self, void* element);
   // HACK 1.0 Fix at some point
   // since primitive types point to (when void* cast)
   // objects in memory that we may not have access to
@@ -97,7 +101,7 @@ struct Array* _clib_new_Array(unsigned int type_size, _clib_array_init args);
                     .initial_size=8,                              \
                     .element_cast_function=_clib_void_ptr_cast,   \
                     .is_primitive_typed=false,                    \
-                    .element_free_function=_clib_free_wrapper     \
+                    .element_free_function=_clib_free_wrapper,  \
                     __VA_ARGS__})
 
 #define CLIB_BYTE_SIZE(type_size, index) (index)*(type_size)

@@ -108,6 +108,7 @@ void test_clib_Array_insert(void** state) {
 }
 void test_clib_Array_get(void** state) {
   TEST("Primitive typed array get");
+  CLIB_NEW_LTYPE_ASSERT(array, int);
   Array* array = clib_new_Array(int, .is_primitive_typed=true);
   void* element_vptr;
   // inserting into non-available spot
@@ -118,6 +119,8 @@ void test_clib_Array_get(void** state) {
 
   array->append(array, 10);
   array->append(array, 11);
+  int test = CLIB_LTCAST(array, int, array->get(array,0));
+  /* test = CLIB_LTCAST(array, double, array->get(array,0)); */
   assert_int_equal(10, (int) array->get(array, 0));
   assert_int_equal(11, (int) array->get(array, 1));
 
