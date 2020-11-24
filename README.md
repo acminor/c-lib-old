@@ -1,3 +1,3 @@
 # c-lib
 
-Basic library for C.
+Basic library for C. Checkout the traits folder.
